@@ -1,0 +1,27 @@
+<ion-view-view>
+  <ion-header-bar>
+    <h1 class="title">Cadastrar</h1>
+    
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doCadastrar()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Tarefa</span>
+          <input type="text" ng-model="cadastrarData.tarefa">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Descrição</span>
+          <input type="text" ng-model="cadastrarData.descricao">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Horário</span>
+          <input type="text" ng-model="cadastrarData.horario">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Cadastrar</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

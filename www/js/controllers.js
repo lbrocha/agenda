@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+  $scope.cadastrarData = {};
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -39,16 +40,35 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+
+  $scope.doCadastrar = function(){
+    console.log('Cadastrar', $scope.cadastrarData);
+    console.log($scope.cadastrarData.horario);
+    var teste = {'nome': 'fgfdgfdg'};
+    console.log(teste.nome);
+    $state.go("app.index");
+  }
+})
+
+.controller('TarefasCtrl', function($scope) {
+  $scope.tarefas = [
+    { 'tarefa': 'Lava Roupa', 'descricao': 'Apenas as Jeans', 'horario' : '13:50'},
+    { 'tarefa': 'Formatar Notebook', 'descricao': 'Apple', 'horario' : '14:20'},
+    { 'tarefa': 'Caminhar', 'descricao': 'No parque', 'horario' : '15:40' },
+    { 'tarefa': 'Jogar LOL', 'descricao': 'Com o Franklin', 'horario' : '16:50'},
+    { 'tarefa': 'Comprar maçã', 'descricao': 'da branca', 'horario' : '18:40'},
+  ];
+  console.log($scope.tarefas);
 })
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
+    /*{ title: 'Cadastrar', id: 1 },
+    { title: 'Consultar', id: 2 },
+    /*{ title: 'Dubstep', id: 3 },
     { title: 'Indie', id: 4 },
     { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Cowbell', id: 6 }*/
   ];
 })
 

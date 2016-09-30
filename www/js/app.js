@@ -25,12 +25,44 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+
+  .state('app.index', {
+    url: '/index',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/index.html'
+      }
+    }
+  })
+
+  .state('app.cadastrar', {
+  url: '/cadastrar',
+  views: {
+    'menuContent': {
+      templateUrl: 'templates/cadastrar.html'
+    }
+  }
+  })
+
+  .state('app.consultar', {
+  url: '/consultar',
+  views: {
+    'menuContent': {
+      templateUrl: 'templates/consultar.html',
+      controller: 'TarefasCtrl'
+    }
+  }
+})
+
+
+
+
 
   .state('app.search', {
     url: '/search',
@@ -49,6 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
@@ -56,6 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/playlists.html',
           controller: 'PlaylistsCtrl'
         }
+
       }
     })
 
