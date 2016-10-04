@@ -1,7 +1,14 @@
 <ion-view view-title="AgendaApp">
   <ion-content>
-    <div ng-repeat="v in listas">
-      <a ng-href="#/templates/consultaListas/{{v.id}}">{{v.lista}}</a>
-    </div>
+    <!--<div ng-repeat="v in listas">
+      //<a ng-href="#/cadastrar.html" class="item-remove-animate" >{{v.lista}}</a>
+      <ion-item class="item-remove-animate" ng-href="#/templates/cadastrar"> {{v.lista}}</ion-item>
+    </div> -->
+
+    <ion-list>
+      <ion-item ng-repeat="v in listas" class ="item-text-wrap"
+      href="#/app/cadastrar">
+      <table>{{v.lista}}</table>
+    </ion-item>
   </ion-content>
 </ion-view>

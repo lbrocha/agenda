@@ -51,6 +51,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
+  .state('app.consultaListaView', {
+  url: '/consultaListaView',
+  views: {
+    'menuContent': {
+      templateUrl: 'templates/consultaListaView.html',
+      controller: 'listasCtrl'
+    }
+  }
+  })
+
   .state('app.cadastrarListaTarefa', {
     url: '/cadastrarListaTarefa',
     views: {
@@ -78,6 +88,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   }
 })
+
 
 
 

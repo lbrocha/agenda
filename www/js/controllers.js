@@ -3,6 +3,7 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
   $scope.cadastrarData = {};
   $scope.cadastrarListaData = {};
+  $scope.goto = 'templates/cadastrar.html';
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.

@@ -1,6 +1,6 @@
 <ion-view view-title="AgendaApp">
   <ion-content>
-      <div ng-repeat="v in tarefas">
+      <div ng-repeat="v in tarefas" ng-if="v.id == '2'">
         {{v.tarefa}} {{v.descricao}} {{v.horario}}
         <ion-checkbox ng-model="isChecked">Finalizada</ion-checkbox>
       </div>
