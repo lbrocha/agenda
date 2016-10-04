@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
   $scope.cadastrarData = {};
+  $scope.cadastrarListaData = {};
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -41,22 +42,34 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 
+  $scope.doCadastrarListaTarefa = function(){
+    console.log('Cadastrar', $scope.cadastrarListaData);
+  };
+
   $scope.doCadastrar = function(){
     console.log('Cadastrar', $scope.cadastrarData);
     console.log($scope.cadastrarData.horario);
     var teste = {'nome': 'fgfdgfdg'};
     console.log(teste.nome);
-    $state.go("app.index");
+    //$state.go("app.consultar");
   }
+
+})
+
+.controller('listasCtrl', function($scope) {
+  $scope.listas = [
+    {'id': 1, 'lista': 'Casa'},
+    {'id': 2, 'lista': 'Serviço'}
+  ];
 })
 
 .controller('TarefasCtrl', function($scope) {
   $scope.tarefas = [
-    { 'tarefa': 'Lava Roupa', 'descricao': 'Apenas as Jeans', 'horario' : '13:50'},
-    { 'tarefa': 'Formatar Notebook', 'descricao': 'Apple', 'horario' : '14:20'},
-    { 'tarefa': 'Caminhar', 'descricao': 'No parque', 'horario' : '15:40' },
-    { 'tarefa': 'Jogar LOL', 'descricao': 'Com o Franklin', 'horario' : '16:50'},
-    { 'tarefa': 'Comprar maçã', 'descricao': 'da branca', 'horario' : '18:40'},
+    { 'tarefa': 'Lava Roupa', 'descricao': 'Apenas as Jeans', 'horario' : '13:50', 'id': '1'},
+    { 'tarefa': 'Formatar Notebook', 'descricao': 'Apple', 'horario' : '14:20', 'id': '2'},
+    { 'tarefa': 'Caminhar', 'descricao': 'No parque', 'horario' : '15:40', 'id': '1' },
+    { 'tarefa': 'Jogar LOL', 'descricao': 'Com o Franklin', 'horario' : '16:50', 'id': '1'},
+    { 'tarefa': 'Comprar maçã', 'descricao': 'da branca', 'horario' : '18:40', 'id': '2'}
   ];
   console.log($scope.tarefas);
 })
